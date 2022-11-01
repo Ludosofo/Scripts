@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Soy un cambio minimo en un log");
+        Debug.Log("Soy un cambio minimo minimo");
     }
 
     // Update is called once per frame
