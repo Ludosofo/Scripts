@@ -9,7 +9,7 @@ using TMPro;
 public class GameController : MonoBehaviour
 {
     // Hidden enums & variables
-    public enum STATUS{ PLAY, PAUSED, ZAWARUDO };
+    public enum STATUS{ PLAY, PAUSED, GAMEPAUSED };
     private Scene scene;
 
     [Header("Config & variables")]
@@ -18,21 +18,24 @@ public class GameController : MonoBehaviour
     public string sceneName;
     public STATUS status;
 
-    [Header("Dictionaries of objects")]
-    public Dictionary<string, GameObject> CanvasDictionary = new Dictionary<string, GameObject>();
-    public List<GameObject> GameObjectsToPooling;
+   // [Header("Dictionaries of objects")]
+   // public Dictionary<string, GameObject> CanvasDictionary = new Dictionary<string, GameObject>();
+   // public List<GameObject> GameObjectsToPooling;
 
 
     void Start(){
         scene = SceneManager.GetActiveScene();
         sceneName = scene.name;
         Application.targetFrameRate = framerate;
-        CreatePools();
+        // CreatePools();
     }
 
-    void CreatePools(){
+    /*
+        void CreatePools(){
         foreach(GameObject obj in GameObjectsToPooling){
             ObjectPooling.PreLoad(obj,10);
         }
     }
+    */
+    
 }
