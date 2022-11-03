@@ -1,41 +1,36 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
-using UnityEngine.UI;
-using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    // Hidden enums & variables
-    public enum STATUS{ PLAY, PAUSED, GAMEPAUSED };
-    private Scene scene;
+    public enum StatusGame{ MENU, PLAY, PAUSE, GAMEPAUSE };
+    public enum StatusPlayer{ NORMAL, DEATH, INMORTAL };
+    public StatusGame statusGame;
+    public StatusPlayer statusPlayer;
+    public int frameRate = 60;
+    
+    public List<GameObject> objectsToPool;
 
-    [Header("Config & variables")]
-    [SerializeField] public int framerate = 60;
-    public float localTimeScale = 1f;
-    public string sceneName;
-    public STATUS status;
-
-   // [Header("Dictionaries of objects")]
-   // public Dictionary<string, GameObject> CanvasDictionary = new Dictionary<string, GameObject>();
-   // public List<GameObject> GameObjectsToPooling;
-
-
-    void Start(){
-        scene = SceneManager.GetActiveScene();
-        sceneName = scene.name;
-        Application.targetFrameRate = framerate;
-        // CreatePools();
+    void Awake(){
+        Application.targetFrameRate = frameRate;
     }
 
-    /*
-        void CreatePools(){
-        foreach(GameObject obj in GameObjectsToPooling){
-            ObjectPooling.PreLoad(obj,10);
+    // Start is called before the first frame update
+    void Start()
+    {
+        CreateObjectPools();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void CreateObjectPools(){
+        foreach(GameObject obj in objectsToPool){
+            ObjectPooling.PreLoad(obj,1);
         }
     }
-    */
-    
 }
