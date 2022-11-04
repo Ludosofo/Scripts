@@ -5,6 +5,7 @@ using UnityEngine;
 public class DirectionalShooter : MonoBehaviour
 {
     // Yonky, si lees esto en el futuro, continua trabajando para escapar de los boomers
+    // Estoy escribiendo esto para subir como minimo algo
 
     // private float x;
     // private float y;
