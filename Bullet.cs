@@ -68,14 +68,14 @@ public class Bullet : MonoBehaviour
     public void DamageCollisionPlayer(Collider2D other){
         if(typeBullet==TypeBullet.ENEMY){
             if( other.gameObject.CompareTag("Player") ){
-                other.GetComponent<PlayerManager>().DealDamage(damage);
+                /// other.GetComponent<PlayerManager>().DealDamage(damage);
             }
         }
     }
 
     public void DamageCollisionEnemy(Collider2D other){
         if(typeBullet==TypeBullet.PLAYER){
-            other.GetComponent<Enemy>().DealDamage(damage);
+            /// other.GetComponent<Enemy>().DealDamage(damage);
             InstanceCollideEffect();
         }
     }
