@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public bool mouse;
     public enum StatusGame{ MENU, PLAY, PAUSE, GAMEPAUSE };
     public enum StatusPlayer{ NORMAL, DEATH, INMORTAL };
     public StatusGame statusGame;
@@ -25,12 +26,16 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void CreateObjectPools(){
         foreach(GameObject obj in objectsToPool){
             ObjectPooling.PreLoad(obj,1);
         }
+    }
+
+    void SetMouse(){
+        Cursor.visible = mouse;
     }
 }
